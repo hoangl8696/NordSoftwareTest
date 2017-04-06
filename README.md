@@ -21,11 +21,11 @@ As someone comming from strongly-type language such as Java, C, and currently Sw
 React, it is highly ineffience so far when compare coding time with result. Ionic2 + Angular 2 perform much better.
 
 ### Developing guide:
-## Follow https://github.com/facebookincubator/create-react-app to create the create-react-app template for the application
-## Download or clonse the repo to your desktop
-## Open your favourite code editor, open terminal, locate to the directory of the newly downloaded file
-## Transfer all file from src folder of the newly downloaded file to the create-react-app template
-## Type in terminal npm start
+ Follow https://github.com/facebookincubator/create-react-app to create the create-react-app template for the application
+ Download or clonse the repo to your desktop
+ Open your favourite code editor, open terminal, locate to the directory of the newly downloaded file
+ Transfer all file from src folder of the newly downloaded file to the create-react-app template
+ Type in terminal npm start
 
 ### Developer logs:
 ## 3-4-2017
