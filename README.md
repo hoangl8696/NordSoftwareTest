@@ -1,5 +1,5 @@
-### Project overview:
-## Total time:
+## Project overview:
+### Total time:
 22 hours
 
 ## Period:
