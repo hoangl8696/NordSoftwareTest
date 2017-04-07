@@ -27,6 +27,26 @@ React, it is highly ineffience so far when compare coding time with result. Ioni
  Transfer all file from src folder of the newly downloaded file to the create-react-app template.
  Type in terminal npm start.
 
+## Hotfix:
+### 7-4-2017
+
+#### User's report:
+1. Alphabetical sorting does not work properly after adding a new participant to the list.
+2. Editing after sorting modifies a different user (probably due to indexes being out of order).
+
+#### Developer's report:
+3. Sorting email function did not work at all, create error, did not crash
+
+#### Errors originate from:
+1. Error cause by misunderstood. Alphabetical sorting did work, however instruction not clear on how to sort capital vs non-capital of the same letter
+2. Iterating through the userList require a "key" prop for react to work properly, developer use the array index as key, cause problem when update or delete data (as user's report, index become out of order)
+3. Typos (sorting function should have called this.email(), instead called this.emailAddress())
+
+#### Action taken:
+1. Sorting function will now attempt to convert all to lower case letter before comparing. This will result in a sorting purely on the letters only (ignore upercase / lowercase)
+2. Replace the array index with the User model's id. The "key" prop will now use a randomly generated 16 digits number (the id)
+3. Fix the typos
+
 ## Developer logs:
 ### 3-4-2017
 
