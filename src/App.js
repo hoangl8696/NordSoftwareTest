@@ -23,7 +23,12 @@ class App extends Component {
 
   //Method to add new user
   addUser(user) {
-    this.state.userList.push(user)
+    let newUser = new User()
+    newUser.id = user.id;
+    newUser.userName = user.userName[0]
+    newUser.phoneNum = user.phoneNum[0]
+    newUser.emailAddress = user.emailAddress[0]
+    this.state.userList.push(newUser)
     this.setState({ userList: this.state.userList })
   }
 
@@ -44,12 +49,12 @@ class App extends Component {
 
   //Sort email column
   sortEmail() {
-    this.state.userList = this.state.userList.sort((user1, user2) => user1.emailAddress > user2.emailAddress ? 1 : (user1.emailAddress < user2.emailAddress ? -1 : 0))
+    this.state.userList = this.state.userList.sort((user1, user2) => user1.emailAddress.toLocaleLowerCase() > user2.emailAddress.toLocaleLowerCase() ? 1 : (user1.emailAddress.toLocaleLowerCase() < user2.emailAddress.toLocaleLowerCase() ? -1 : 0))
   }
 
   //Sort name column
   sortName() {
-    this.state.userList = this.state.userList.sort((user1, user2) => user1.userName > user2.userName ? 1 : (user1.userName < user2.userName ? -1 : 0))
+    this.state.userList = this.state.userList.sort((user1, user2) => user1.userName.toLocaleLowerCase() > user2.userName.toLocaleLowerCase() ? 1 : (user1.userName.toLocaleLowerCase() < user2.userName.toLocaleLowerCase() ? -1 : 0))
   }
 
   //Sort phone column
@@ -67,7 +72,7 @@ class App extends Component {
         this.sortPhoneNumber()
         break
       case 'emailAddress':
-        this.sort.emailAddress()
+        this.sortEmail()
         break
     }
     this.setState({ userList: this.state.userList })

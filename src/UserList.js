@@ -13,7 +13,7 @@ export default class UserList extends Component {
     //Helper method, iterate through the passed array and create new items for the table
     renderUserList() {
         return _.map(this.props.userList, (user, index) => {
-            return <UserListItem key={index} userListItem={user} deleteUser={this.props.deleteUser.bind(this)} edditUser={this.props.edditUser.bind(this)} />
+            return <UserListItem key={user.id} userListItem={user} deleteUser={this.props.deleteUser.bind(this)} edditUser={this.props.edditUser.bind(this)} />
         })
     }
 
